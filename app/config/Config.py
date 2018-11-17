@@ -11,7 +11,7 @@ class Config:
 
     def __init__(self):
         self._config = ConfigParser()
-        self._config.read('config/default.ini')
+        self._config.read('app/config/default.ini')
         self._config.read('config/user.ini')
 
     def get_espurna_hostname(self):

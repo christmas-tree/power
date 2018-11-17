@@ -6,8 +6,8 @@ from app.espurna import Espurna
 def main():
 
     _config = Config()
-    _statsdsender = StatsdSender(host=_config.get_hostname(), port=_config.get_port(), prefix=_config.get_prefix())
-    _espurna = Espurna(host=_config.get_espurna_hostname(), api_key=_config.get)
+    _statsdsender = StatsdSender(host=_config.get_statd_hostname(), port=_config.get_port(), prefix=_config.get_prefix())
+    _espurna = Espurna(host=_config.get_espurna_hostname(), api_key=_config.get_espurna_api_key())
 
     while True:
         _statsdsender.send_current(_espurna.get_current())
