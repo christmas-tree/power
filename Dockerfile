@@ -1,14 +1,11 @@
-FROM apline:latest
+FROM gliderlabs/alpine:latest
 
 ADD . /power
 
 VOLUME /power/config
 
-RUN apk add --update \
-    python \
-    py-pip \
+RUN apk add --update --no-cache python py-pip \
     && cd /power \
-    && py-pip install -r requirements.txt \
-    && rm -rf /var/cache/apk/*
+    && pip install -r requirements.txt
 
-RUN /power/start.sh
+ENTRYPOINT /power/start.sh
