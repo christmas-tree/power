@@ -1,1 +1,1 @@
-from Espurna import Espurna
+from app.espurna.Espurna import Espurna

@@ -1,1 +1,1 @@
-from StatsdSender import StatsdSender
+from app.statsdsender.StatsdSender import StatsdSender

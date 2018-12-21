@@ -1,7 +1,11 @@
 import time
+
+from requests.exceptions import ConnectionError
+
 from app.statsdsender import StatsdSender
 from app.config import Config
 from app.espurna import Espurna
+
 
 def main():
 
